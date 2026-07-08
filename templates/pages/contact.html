@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %}Contact Me{% endblock %}
+
+{% block content %}
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have a question or want to work together? We'd love to hear from you!</p>
+            </div>
+            
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Contact Information</h4>
+                            
+                            <!-- EMAIL: Replace with your actual email -->
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong><br>
+                                    <a href="mailto:degoshenenergyresources@gmail.com" style="color: var(--text-light);">degoshenenergyresources@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <!-- PHONE: Replace with your actual phone number -->
+                            <div class="contact-info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong><br>
+                                    <a href="tel:+2348132160009" style="color: var(--text-light);">+(234) 813-2160-009</a>
+                                </div>
+                            </div>
+                            
+                            <!-- ADDRESS: Replace with your actual address -->
+                            <div class="contact-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location</strong><br>
+                                    <span style="color: var(--text-light);">Aba, Abia State Nigeria</span>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+                            <h5 class="mb-3">Follow Us</h5>
+                            <div class="social-links">
+                                <!-- SOCIAL LINKS: Replace # with your actual social media URLs -->
+                                <a href="https://www.linkedin.com/in/chukwuemeka-ukala-2976a32b8" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/ukala-chukwuemeka" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://x.com/BlessedAustineC" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/ComrAustine.Chukwuemeka" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Send us a Message</h4>
+                            
+                            <form method="POST">
+                                {% csrf_token %}
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="id_name" class="form-label">Your Name</label>
+                                        {{ form.name }}
+                                        {% if form.name.errors %}
+                                            <div class="text-danger small">{{ form.name.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-3">
+                                        <label for="id_email" class="form-label">Your Email</label>
+                                        {{ form.email }}
+                                        {% if form.email.errors %}
+                                            <div class="text-danger small">{{ form.email.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="id_subject" class="form-label">Subject</label>
+                                    {{ form.subject }}
+                                    {% if form.subject.errors %}
+                                        <div class="text-danger small">{{ form.subject.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="id_message" class="form-label">Message</label>
+                                    {{ form.message }}
+                                    {% if form.message.errors %}
+                                        <div class="text-danger small">{{ form.message.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

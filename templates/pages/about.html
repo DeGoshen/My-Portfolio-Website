@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}   <!-- 1. ADD THIS LINE AT THE TOP -->
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                    <!-- 2. USE THE STATIC TAG LIKE THIS -->
+                    <img src="{% static 'images/about-photo.jpg' %}" alt="About Me" class="img-fluid rounded shadow">
+                </div>
+                <!-- ... rest of your code ... -->
+                
+                <div class="col-lg-7">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="lead mb-4">
+                        <!-- INTRODUCTION: Write a compelling introduction about yourself -->
+                        We are very passionate in renewable energy services, sales and after sales services, installation and maintenance of solar products.
+                    </p>
+                    
+                    <!-- BIOGRAPHY: Add your detailed biography here -->
+                    <p>
+                        With over 10 years of experience in Solar System Installation, We've had the privilege of working on diverse projects that have shaped our expertise and passion for technology. Our journey began when when the dependence on the National grid fails].
+                    </p>
+                    
+                    <p>
+                        We specialize in sales and after sales services, installation and maintenance of solar products, and constantly adapting to new technologies.].
+                    </p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-graduation-cap text-primary me-2"></i>Education</h5>
+                            <!-- EDUCATION: Add your educational background -->
+                            <p class="text-muted">
+                                [Electronics and Telecommunications Engineering]<br>
+                                [Ahmadu Bello University Zaria]<br>
+                                [2024]
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5><i class="fas fa-briefcase text-primary me-2"></i>Experience</h5>
+                            <!-- EXPERIENCE: Add your work experience summary -->
+                            <p class="text-muted">
+                                [Chief Technician]<br>
+                                [Abia State Government]<br>
+                                [2023]
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <a href="{% url 'contact' %}" class="btn btn-primary mt-3">Let's Work Together</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What I Do Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What we Do</h2>
+                <p class="section-subtitle">Services we offer</p>
+            </div>
+            
+            <div class="row">
+                <!-- SERVICE 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                        <h5>Solar System Installation</h5>
+                        <p class="text-muted">Building responsive and scalable renewable energy system using modern technologies.</p>
+                    </div>
+                </div>
+                
+                <!-- SERVICE 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
+                        <h5>Solar Sales and After Sales</h5>
+                        <p class="text-muted">Creating intuitive client/customer relationship for a better ecosystem.</p>
+                    </div>
+                </div>
+                
+                <!-- SERVICE 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <i class="fas fa-database fa-3x text-primary mb-3"></i>
+                        <h5>Solar System Maintenance</h5>
+                        <p class="text-muted">Designing and maintaining scalable Solar Ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}My Skills{% endblock %}
+
+{% block content %}
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title"> Skills & Expertise</h2>
+                <p class="section-subtitle">Technologies and Tools We work with</p>
+            </div>
+            
+            {% if skills %}
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        {% for skill in skills %}
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">
+                                    <!-- Optional: Add icon if you have icon_class field -->
+                                    {% if skill.icon_class %}
+                                        <i class="{{ skill.icon_class }} me-2"></i>
+                                    {% endif %}
+                                    {{ skill.name }}
+                                </span>
+                                <span class="skill-percentage">{{ skill.level }}%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: {{ skill.level }}%;"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <p class="text-muted">Skills will be displayed here once added to the database.</p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h3 class="mb-3">Interested in working together?</h3>
+            <p class="text-muted mb-4">Let's discuss your project and how I can help bring your ideas to life.</p>
+            <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Get In Touch</a>
+        </div>
+    </section>
+{% endblock %}
